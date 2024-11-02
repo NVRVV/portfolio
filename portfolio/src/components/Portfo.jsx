@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Portfo.css'
 import 'boxicons/css/boxicons.min.css'
 import varma from  '../assets/varma.jpg' 
+import resume from '../assets/Varma_Resume.pdf'
 
 const Portfo = () => {
 
@@ -23,7 +24,7 @@ const Portfo = () => {
             <ul class={menuOpen ? "open" : ""}>
                 <a href="#home" >Home</a>
                 <a href="#education">Education</a>
-                <a href="Varma_Resume (2).pdf">Resume</a>
+                <a href={resume}>Resume</a>
                 <a href="#contact">Contact Me</a>
             </ul>
         </nav>
