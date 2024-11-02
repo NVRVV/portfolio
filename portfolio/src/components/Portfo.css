@@ -12,10 +12,11 @@
     z-index: 5;
 }
 
-.logo{
+header .logo{
     font-size: 3.2rem;
     color: var(--text-color);
     font-weight: 800;
+    text-align: top;
     cursor: pointer;
     transition: 0.5s ease;
 }
@@ -28,7 +29,7 @@
     text-shadow: 0 0 24px var(--main-color);
 }
 
-.navbar a{
+nav ul a{
     font-size: 1.9rem;
     color: var(--text-color);
     margin-left: 5rem;
@@ -38,16 +39,22 @@
     border-bottom: 3px solid transparent;
 }
 
-.navbar a:hover,
-.navbar a.active{
-    color: var(--main-color);
-    border-bottom: 3px solid var(--main-color);
+nav .menu{
+    display: block;
+    position: absolute;
+    top: 4.75rem;
+    right: 4.7rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
 }
 
-#menu-icon{
-    font-size: 3.7rem;
-    color: var(--main-color);
-    display: none;
+nav .menu span{
+    height: 0.4rem;
+    width: 100%;
+    background-color: var(--main-color);
+    border-radius: 0.2rem;
 }
 
 section{
@@ -549,10 +556,11 @@ span{
 }
 
 @media(max-width:895px){
-    #menu-icon{
-        display: block;
+    nav .menu{
+        display: flex;
     }
-    .navbar{
+    nav ul.open{
+        display: flex;
         position: absolute;
         top: 100%;
         right: 0;
@@ -565,10 +573,7 @@ span{
         border-bottom: 2px solid var(--main-color);
         display: none;
     }
-    .navbar.active{
-        display: block;
-    }
-    .navbar a{
+    nav ul a{
         display: block;
         font-size: 2rem;
         margin: 3rem 0;

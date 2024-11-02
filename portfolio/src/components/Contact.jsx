@@ -1,8 +1,7 @@
 import React from 'react'
 import { useRef } from 'react';
 
-const Contact = () => {
-
+export const Contact = () => {
 const form = useRef();
 
   const sendEmail = (e) => {
@@ -10,7 +9,7 @@ const form = useRef();
 
     emailjs
       .sendForm('service_6338mca', 'template_bgxaddb', form.current, {
-        publicKey: '7UuAVnGwo1UFHTnOK',
+        publicKey: 'etwsD3wzT9UG1XE2s',
       })
       .then(
         () => {

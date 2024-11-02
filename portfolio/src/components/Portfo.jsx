@@ -1,57 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Portfo.css'
 import 'boxicons/css/boxicons.min.css'
-import varma from  '../assets/varma.jpg'
+import varma from  '../assets/varma.jpg' 
 
 const Portfo = () => {
 
-    let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
-
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-}
-
-
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
-
-        if(top >= offset && top < offset + height){
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id +']').classList.add('active')
-            })
-        }
-    })
-}
-
-
-
+    const [menuOpen, setMenuOpen] = useState(false)
 
 
   return (
     <div>
-      <header className="header">
-        <a href="#home" class="logo"> Varma
-        <span>Namepalli</span></a>
+    <header className='header'>
+        <a href="#home" class="logo"> Varma <span>Namepalli</span></a>
 
-        <i className='bx bx-menu' id="menu-icon"></i>
+        <nav className="nav">
+        <div className="menu" onClick={() => {setMenuOpen(!menuOpen);}}>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-        <nav className="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#education">Education</a>
-            <a href="Varma_Resume (2).pdf">Resume</a>
-            <a href="#contact">Contact Me</a>
+            <ul class={menuOpen ? "open" : ""}>
+                <a href="#home" >Home</a>
+                <a href="#education">Education</a>
+                <a href="Varma_Resume (2).pdf">Resume</a>
+                <a href="#contact">Contact Me</a>
+            </ul>
         </nav>
     </header>
-
     <section className="home" id="home">
         <div className="home-content">
             <h1>Hi, It's <span>Varma Namepalli</span></h1>
